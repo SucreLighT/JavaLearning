@@ -1,4 +1,8 @@
 package OPP;
 
-public class Animal {
+//public class Animal {
+//}
+
+public interface Animal{
+
 }
