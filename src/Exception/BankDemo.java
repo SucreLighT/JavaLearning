@@ -15,7 +15,7 @@ public class BankDemo {
         }catch (InsufficientFundsException e)
         {
             System.out.println("Sorry,but you are short $" + e.getAmount());
-            e.printStackTrace();
+            e.printStackTrace();    //在命令行打印异常信息在程序中出错的位置及原因
         }
     }
 }
