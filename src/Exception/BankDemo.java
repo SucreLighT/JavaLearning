@@ -16,6 +16,8 @@ public class BankDemo {
         {
             System.out.println("Sorry,but you are short $" + e.getAmount());
             e.printStackTrace();    //在命令行打印异常信息在程序中出错的位置及原因
+        }finally {
+            System.out.println("\n无论是否发生异常，finally代码块中的代码总会被执行。");
         }
     }
 }
