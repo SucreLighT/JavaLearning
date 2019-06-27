@@ -4,6 +4,7 @@ package extendsDemo;
  * super关键字
  * 作用：指向当前类的对象的父类引用
  * 可以调用父类的构造方法、成员变量和成员方法
+ * super(args...)表示调用父类的有参构造方法
  */
 public class Super {
     public static void main(String[] args) {
