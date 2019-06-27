@@ -1,4 +1,4 @@
-package OPP;
+package opp;
 
 public class variable {
     public static void main(String[] args) {

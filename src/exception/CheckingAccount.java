@@ -1,5 +1,4 @@
-package Exception;
-import java.io.*;
+package exception;
 
 public class CheckingAccount {
     private double balance;

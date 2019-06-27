@@ -1,4 +1,4 @@
-package EasyGo;
+package easyGo;
 
 public class CharacterDemo {
     public static void main(String []args){

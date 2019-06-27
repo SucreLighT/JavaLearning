@@ -1,4 +1,4 @@
-package OPP;
+package opp;
 
 public class Animal {
     public void move(){

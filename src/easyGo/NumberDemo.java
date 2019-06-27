@@ -1,4 +1,4 @@
-package EasyGo;
+package easyGo;
 
 public class NumberDemo {
     public static void main(String []args)

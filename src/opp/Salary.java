@@ -1,4 +1,4 @@
-package OPP;
+package opp;
 
 public class Salary extends Employee {
     public double salary;

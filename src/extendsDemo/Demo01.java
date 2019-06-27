@@ -1,4 +1,4 @@
-package Extends;
+package extendsDemo;
 
 /**
  * 继承的简单实例

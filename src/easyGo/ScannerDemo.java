@@ -1,4 +1,4 @@
-package EasyGo;
+package easyGo;
 import java.util.Scanner;
 
 public class ScannerDemo {

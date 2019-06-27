@@ -1,5 +1,4 @@
-package Exception;
-import java.io.*;
+package exception;
 
 
 public class InsufficientFundsException extends Exception {
