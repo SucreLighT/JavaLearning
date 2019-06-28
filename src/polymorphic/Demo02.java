@@ -10,7 +10,7 @@ public class Demo02 {
 
         //父类引用指向子类对象[左边是父类，右边是子类]
         Father2 son2 = new Son2();
-        son2.eat();
+        son2.eat(); //执行Son的eat方法
     }
 }
 
