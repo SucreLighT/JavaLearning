@@ -8,6 +8,10 @@ package polymorphic;
  *
  * 多态中的成员变量访问特点:
  * 编译看左边(父类)，运行看左边(父类)
+ *
+ * 多态的好处和弊端
+ * 好处：方便维护，扩展性好
+ * 弊端: 在方法中使用父类当作参数时，方法内部不能使用父类访问子类的属性和方法
  */
 public class Demo01 {
     public static void main(String[] args) {
