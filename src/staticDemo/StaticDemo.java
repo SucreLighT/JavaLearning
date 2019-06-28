@@ -17,7 +17,7 @@ public class StaticDemo {
         //ArrayTool tool = new ArrayTool();
 
         //获取最大值
-        int max = ArrayTool.getMax(arr);
+        int max = ArrayTool.getMax(arr);//静态方法通过类名直接调用
         System.out.println(max);
 
         //打印数组
