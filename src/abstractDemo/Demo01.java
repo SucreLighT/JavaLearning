@@ -12,7 +12,9 @@ public class Demo01 {
     public static void main(String[] args) {
 //        Animal animal = new Animal(); 抽象类不能实例化
         Cat cat = new Cat();
+        cat.name="小花";
         cat.eat();
+        cat.ssy();
 
         Dog dog = new Dog();
         dog.eat();
@@ -20,16 +22,47 @@ public class Demo01 {
 }
 
 abstract class Animal{
-    public abstract void eat();
+    String name;
+    final int MAX_LEGS = 4;
+
+    //构造方法
+    private Animal(){}
+    public Animal (String name){
+        super();
+        this.name = name;
+    }
+
+    public abstract void eat();//抽象方法
+
+    //非抽象方法
+    public void say(){
+        System.out.println("I;m " + name);
+    }
+    public void sleep(){
+        System.out.println("睡觉...");
+    }
 }
 
 class Cat extends Animal{
+
+    public Cat(){
+        super("小黑..");
+    }
+
     public void eat(){
         System.out.println("吃鱼...");
+    }
+
+    public void ssy(){
+        super.say();
+        System.out.println("我很漂亮");
     }
 }
 
 class Dog extends Animal{
+    public Dog(){
+        super("小白..");
+    }
     public void eat(){
         System.out.println("啃骨头...");
     }
