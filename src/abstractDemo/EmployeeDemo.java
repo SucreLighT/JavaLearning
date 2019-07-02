@@ -26,7 +26,7 @@ abstract class Employee{
     String ID;
     double salary;
 
-    //构造放啊
+    //构造方法
     public Employee(){
         super();
     }
