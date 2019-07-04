@@ -10,16 +10,20 @@ package interClass;
  */
 public class Demo01 {
     public static void main(String[] args) {
-        Outer.Inner inner = new Outer().new Inner();
-        inner.test();
-
+        Outer outer = new Outer();//在外部实例化外部类，从而调用内部类方法
+        outer.test1();
     }
 }
 
 class Outer{
     private int a = 12;
 
-    class Inner{
+    public void test1(){
+        Inner inner = new Inner();  //在外部类中使用内部类
+        inner.test();
+    }
+
+    private class Inner{    //私有内部类，无法在外部创建内部类对象
         public void test(){
             System.out.println("a:" + a);
         }
