@@ -4,7 +4,7 @@ package collectionDemo;
  * @author sucre
  * @date 2019-07-27
  * @time 09:54
- * @description 用于ListDemo
+ * @description 用于ArrayListDemo
  */
 public class Student {
     private String name;

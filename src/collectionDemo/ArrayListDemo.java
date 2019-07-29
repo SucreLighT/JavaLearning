@@ -12,7 +12,7 @@ import java.util.ListIterator;
  * @description List集合
  */
 
-public class ListDemo {
+public class ArrayListDemo {
     public static void main(String[] args) {
 //        fun1();
 //        fun2();
