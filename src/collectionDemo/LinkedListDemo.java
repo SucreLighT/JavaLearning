@@ -26,6 +26,6 @@ public class LinkedListDemo {
         list.addFirst("c");
         list.addLast("d");
         System.out.println("LinkedList:" + list);
-        
+
     }
 }
