@@ -48,8 +48,22 @@ class Stu{
     <>中的类型可以有多个，用逗号隔开
  */
 class Tool<T>{
+    private T o ;
+
+    public T getO() {
+        return o;
+    }
+
+    public void setO(T o) {
+        this.o = o;
+    }
+
     public void print(T t){
         System.out.println(t);
+    }
+
+    public T get(int index){
+        return null;
     }
 }
 
@@ -60,5 +74,6 @@ public class Demo03 {
 
         Tool<Stu> tool1 = new Tool<Stu>();
         tool1.print(new Stu("李四",20));
+
     }
 }
