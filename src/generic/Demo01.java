@@ -11,16 +11,13 @@ import java.util.List;
  */
 
 /*
- * 1.如果集合添加基本数据类型，内部会提升为包装类型
- *   int -> Integer
- *   double -> Double
- *
- * 2.List list = new ArrayList(); 这样声明一个集合对象，默认是可以添加任何类型的元素
- *
- * 3.如果在声明集合时，不添加泛型，就会有安全隐患(类型转换异常)
- *
- * 4.声明一个泛型集合：List<String> list = new ArrayList<String>();
- *   代表list只能存字符串元素
+    泛型高级之通配符
+    1.泛型通配符<?> 一般在声明变量类型时使用
+     表示任意类型，如果没有明确，那么就是Object以及任意的Java类
+    2. ? extends E  【E是父类，？子类】
+	向下限定，该泛型可以存E及其子类
+    3. ? super E  【？是父类，E子类】
+	向上限定，该泛型可以存E及其父类
  */
 class Student{
     String name;
