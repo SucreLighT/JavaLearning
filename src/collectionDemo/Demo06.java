@@ -2,6 +2,7 @@ package collectionDemo;
 
 import java.util.HashSet;
 import java.util.Random;
+import java.util.Scanner;
 import java.util.Set;
 
 /**
@@ -15,9 +16,20 @@ public class Demo06 {
     public static void main(String[] args) {
 
 //        fun1();
-//        从键盘读取一行输入，去除重复的字符
+        fun2();
+    }
 
-        
+    //从键盘读取一行输入，去除重复的字符
+    private static void fun2() {
+        Set<Character> set = new HashSet<Character>();
+        Scanner scanner = new Scanner(System.in);
+        String str = scanner.nextLine();
+
+        for (int i=0; i<str.length(); i++){
+            char ch = str.charAt(i);
+            set.add(ch);
+        }
+        System.out.println(set);
     }
 
 
