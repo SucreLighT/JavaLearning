@@ -10,8 +10,6 @@ import java.util.TreeSet;
  * @description TreeSet
  */
 
-
-
 public class TreeSetDemo {
     public static void main(String[] args) {
 //        fun1();
@@ -28,7 +26,7 @@ public class TreeSetDemo {
 				            -1 存的顺序倒序
 				             1 存的顺序正序
      */
-    
+
     private static void fun2() {
         Set<Student> set = new TreeSet<Student>();
         set.add(new Student("张三", 20));
