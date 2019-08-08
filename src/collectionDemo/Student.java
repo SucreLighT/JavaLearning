@@ -6,9 +6,14 @@ package collectionDemo;
  * @time 09:54
  * @description 用于ArrayListDemo
  */
-public class Student {
+public class Student implements Comparable<Student>{
     private String name;
     private int age;
+
+    @Override
+    public int compareTo(Student o) {
+        return 1;
+    }
 
     public Student(String name, int age) {
         this.name = name;
