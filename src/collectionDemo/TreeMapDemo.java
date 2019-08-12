@@ -17,11 +17,38 @@ import java.util.*;
  */
 public class TreeMapDemo {
     public static void main(String[] args) {
+//        fun1();
+
+        fun2();
+    }
+
+    private static void fun2() {
+        Map<Stu1,String> map = new TreeMap<Stu1, String>(new Comparator<Stu1>() {
+            @Override
+            //按名字字母倒序排序且允许同名
+            public int compare(Stu1 o1, Stu1 o2) {
+                int num = o2.name.compareTo(o1.name);
+                num = num==0 ? 1 : num;
+                return num;
+            }
+        });
+        map.put(new Stu1("zhangsan", 18), "湖北");
+        map.put(new Stu1("lisi", 18), "湖南");
+        map.put(new Stu1("wanger", 18), "广东");
+        map.put(new Stu1("wanger", 18), "广西");//改写上一条记录的值为“广西”
+
+        Set<Map.Entry<Stu1,String>> entries = map.entrySet();
+        for(Map.Entry<Stu1, String> entry : entries) {
+            System.out.println(entry.getKey() + " --- " + entry.getValue());
+        }
+    }
+
+    private static void fun1() {
         Map<Stu1,String> map = new TreeMap<Stu1, String>();
-        map.put(new Stu1("小刘", 18), "湖北");
-        map.put(new Stu1("小胡", 18), "湖南");
-        map.put(new Stu1("小官", 18), "广东");
-        map.put(new Stu1("小官", 18), "广西");//改写上一条记录的值为“广西”
+        map.put(new Stu1("zhangsan", 18), "湖北");
+        map.put(new Stu1("lisi", 18), "湖南");
+        map.put(new Stu1("wanger", 18), "广东");
+        map.put(new Stu1("wanger", 18), "广西");//改写上一条记录的值为“广西”
 
         Set<Map.Entry<Stu1,String>> entries = map.entrySet();
         for(Map.Entry<Stu1, String> entry : entries) {
@@ -34,7 +61,7 @@ class Stu1 implements Comparable<Stu1>{
     String name;
     int age;
 
-    //按字母排序且允许同名
+    //按名字字母正序排序且允许同名
     @Override
     public int compareTo(Stu1 o) {
         int num = this.name.compareTo(o.name);
