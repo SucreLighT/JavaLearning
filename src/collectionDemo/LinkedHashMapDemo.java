@@ -2,6 +2,7 @@ package collectionDemo;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * @author sucre
@@ -23,6 +24,10 @@ public class LinkedHashMapDemo {
         map.put(3,"c");
         map.put(1,"a2");
 
-        System.out.println(map);
+        Set<Map.Entry<Integer,String>> entries = map.entrySet();
+        for (Map.Entry<Integer,String> entry:entries
+             ) {
+         System.out.println(entry.getKey()+"--"+entry.getValue());
+        }
     }
 }
