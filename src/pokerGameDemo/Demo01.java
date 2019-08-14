@@ -1,9 +1,7 @@
 package pokerGameDemo;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Random;
+
+import java.util.*;
 
 /**
  * @author sucre
@@ -16,66 +14,99 @@ import java.util.Random;
     模拟斗地主
     1.准备一副牌（54张）
     2.洗牌（打乱牌的顺序）
-    3.发牌（三个人）
-    4.留三张底牌
-    5.每个人拿到牌后对牌排序
-    6.出牌...
+    3.留三张底牌
+    4.发牌
+    5.打印每个玩家的牌
+
+    使用map集合存储牌，对每张牌增加索引
+    洗牌时使用索引代替一张牌对象进行打乱
+    对每个玩家手牌的排序也使用索引
  */
 
 public class Demo01 {
     public static void main(String[] args) {
         //1.准备一副牌
-        List<String> cards = new ArrayList<String>();       //牌集合
-        String[] colors = {"黑桃","红心","梅花","方块"};    //牌的花色
+        Map<Integer,String> cards = new HashMap<Integer, String>();     //牌集合
+        String[] colors = {"♠","♥","♣","♦"};    //牌的花色
         String[] nums = {"2","3","4","5","6","7","8","9","10","J","Q","K","A"};
 
         //生成一副牌
-        for (String color:colors
+        int index = 0;
+        for (String num:nums
              ) {
-            for (String num:nums
+            for (String color:colors
                  ) {
                 String card = color + num;  //一张牌
-                cards.add(card);
+                cards.put(index,card);
+                index++;
             }
         }
-        cards.add("大王");
-        cards.add("小王");
+        cards.put(index,"大王");
+        index++;
+        cards.put(index,"小王");
+
+        System.out.println("==========扑克牌===========");
+        for (Map.Entry<Integer,String> entry:cards.entrySet()
+             ) {
+            System.out.println(entry.getKey()+"---"+entry.getValue());
+        }
 
         //2.洗牌
-        Collections.shuffle(cards);
 
-        System.out.println("扑克牌："+cards);
-
-        //3.随机留三张底牌
-        List<String> underCards = new ArrayList<String>();  //底牌
-        Random random = new Random();
-        for (int i=0; i<3;i++){
-            int index = random.nextInt(cards.size());   //确定抽取的随机数
-            String undercard = cards.remove(index);     //抽取一张底牌
-            underCards.add(undercard);
+        List<Integer> cardsIndex = new ArrayList<Integer>();
+        for (Integer i:cards.keySet()
+             ) {
+            cardsIndex.add(i);
         }
-        System.out.println("底牌：" + underCards);
+        Collections.shuffle(cardsIndex);
+        System.out.println("=========洗牌之后的索引===========");
+        System.out.println(cardsIndex);
+
+
+        //3.留前三张作为底牌
+        Set<Integer> underCardsIndex = new TreeSet<Integer>();  //底牌
+        underCardsIndex.add(cardsIndex.remove(0));
+        underCardsIndex.add(cardsIndex.remove(0));
+        underCardsIndex.add(cardsIndex.remove(0));
+        System.out.println("==========底牌===========");
+        System.out.println("底牌：" + underCardsIndex);
+        lookCards("底牌：",cards,underCardsIndex);
+
 
         //4.发牌,除去三张底牌，还有51张
-        List<String> player1 = new ArrayList<String>();
-        List<String> player2 = new ArrayList<String>();
-        List<String> player3 = new ArrayList<String>();
+        Set<Integer> player1 = new TreeSet<Integer>();
+        Set<Integer> player2 = new TreeSet<Integer>();
+        Set<Integer> player3 = new TreeSet<Integer>();
 
-        for (int i=0; i<cards.size(); i++){
+        for (int i=0; i<cardsIndex.size(); i++){
             if(i%3 == 0){
-                player1.add(cards.get(i));
+                player1.add(cardsIndex.get(i));
             }else if(i%3 == 1){
-                player2.add(cards.get(i));
+                player2.add(cardsIndex.get(i));
             }else if(i%3 == 2){
-                player3.add(cards.get(i));
+                player3.add(cardsIndex.get(i));
             }
         }
 
         //5.打印每个玩家的牌
+        System.out.println("==========玩家牌===========");
         System.out.println("玩家1：" + player1);
+        lookCards("玩家1",cards,player1);
         System.out.println("玩家2：" + player2);
+        lookCards("玩家2",cards,player2);
         System.out.println("玩家3：" + player3);
+        lookCards("玩家3",cards,player3);
 
+    }
 
+    public static void lookCards(String player,Map<Integer,String>cards,Set<Integer>playerCardsIndexs){
+        System.out.print(player);
+
+        List<String> cardsValues = new ArrayList<String>();
+        for (Integer key:playerCardsIndexs
+             ) {
+            cardsValues.add(cards.get(key));
+        }
+        System.out.println(cardsValues);
     }
 }
