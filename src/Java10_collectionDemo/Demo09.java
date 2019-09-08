@@ -1,4 +1,4 @@
-package jAVA10_collectionDemo;
+package Java10_collectionDemo;
 
 import java.util.HashMap;
 import java.util.Map;

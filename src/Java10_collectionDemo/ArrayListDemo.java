@@ -1,4 +1,4 @@
-package jAVA10_collectionDemo;
+package Java10_collectionDemo;
 
 import java.util.ArrayList;
 import java.util.List;
