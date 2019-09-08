@@ -4,12 +4,15 @@ package lesson1_Exception;
  * @author sucre
  * @date 2019-08-15
  * @time 09:28
- * @description 自己处理异常
+ * @description try-catch-finally处理异常
  */
 
 /*
     自己处理异常主要有两种方法
     1.try…catch…finally
+    finally的语句体一般情况下一定会执行
+    特殊情况：在执行到finally之前jvm退出了(比如System.exit(0))
+
     2.throws
  */
 
@@ -23,14 +26,18 @@ package lesson1_Exception;
 public class Demo02 {
     public static void main(String[] args) {
 //        算术异常ArithmeticException
+        int a = 1;
         try{
-            int a = 10/0;
+            a = 10/0;
         }catch (Exception e){
             System.out.println(e.getClass());
             System.out.println(e.getMessage());
             System.out.println(e.toString());
             e.printStackTrace();
             System.out.println("算术异常，除数不能为0！");
+        }finally {
+            System.out.println("程序继续进行");
+            System.out.println("a:"+a);
         }
     }
 }

@@ -4,7 +4,7 @@ package lesson1_Exception;
  * @author sucre
  * @date 2019-08-15
  * @time 09:40
- * @description java异常处理
+ * @description java异常处理 try catch 捕获多个异常
  */
 
 /*
