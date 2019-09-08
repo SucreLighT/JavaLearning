@@ -1,4 +1,4 @@
-package abstractDemo;
+package Java01_abstractDemo;
 
 /**
  * 使用抽象类练习员工的案例

@@ -1,4 +1,4 @@
-package abstractDemo;
+package Java01_abstractDemo;
 
 /**
  * 1.抽象类和抽象方法用abstract关键字修饰；
