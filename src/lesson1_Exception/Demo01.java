@@ -22,6 +22,15 @@ package lesson1_Exception;
     2.java虚拟机处理
     jvm有一个默认的异常处理机制,将该异常的名称、异常的信息、异常出现的位置打印在了控制台上,同时程序停止运行。
 
+
+    1.原则:如果自己能处理的问题，就用try-catch, 如果自己不能解决的问题，就throws
+
+    2.try-catch和throws的区别:
+	后续程序需要继续运行就用try
+	后续程序不需要继续运行就throws
+
+    3.如果JDK没有提供对应的异常，需要自定义异常。
+
  */
 
 public class Demo01 {
