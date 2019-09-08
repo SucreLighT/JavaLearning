@@ -13,12 +13,23 @@ package lesson1_Exception;
     2.throws
  */
 
+/*
+    Exception是一个继承Throwable的子类
+    getMessage():获取异常信息，返回字符串。
+    toString():获取异常类名和异常信息，返回字符串。
+    printStackTrace():打印异常类名和异常信息，以及异常出现在程序中的位置
+
+ */
 public class Demo02 {
     public static void main(String[] args) {
 //        算术异常ArithmeticException
         try{
             int a = 10/0;
-        }catch (ArithmeticException e){
+        }catch (Exception e){
+            System.out.println(e.getClass());
+            System.out.println(e.getMessage());
+            System.out.println(e.toString());
+            e.printStackTrace();
             System.out.println("算术异常，除数不能为0！");
         }
     }
