@@ -1,4 +1,4 @@
-package Java15_io;
+package Java15_io_ByteStream;
 
 import java.io.*;
 
@@ -21,8 +21,8 @@ import java.io.*;
 
 public class Demo03 {
     public static void main(String[] args) throws IOException {
-        FileInputStream fileInputStream = new FileInputStream(".\\src\\Java15_io\\music.mp3");
-        FileOutputStream fileOutputStream = new FileOutputStream(".\\src\\Java15_io\\music1.mp3");
+        FileInputStream fileInputStream = new FileInputStream(".\\src\\Java15_io_ByteStream\\music.mp3");
+        FileOutputStream fileOutputStream = new FileOutputStream(".\\src\\Java15_io_ByteStream\\music1.mp3");
 
         BufferedInputStream bufferedInputStream = new BufferedInputStream(fileInputStream);
         BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(fileOutputStream);

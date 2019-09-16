@@ -1,4 +1,4 @@
-package Java15_io;
+package Java15_io_ByteStream;
 
 import java.io.*;
 
@@ -44,7 +44,7 @@ public class Demo01 {
     */
     private static void FileOutputFun() throws IOException {
         OutputStream fileOutputStream = new FileOutputStream("D:\\Java\\" +
-                "workplace\\JavaLearning\\src\\Java15_io\\b.txt");  //多态写法
+                "workplace\\JavaLearning\\src\\Java15_io_ByteStream\\b.txt");  //多态写法
         fileOutputStream.write(97);
 
         byte[] bytes = {98,99,100,101};
@@ -66,7 +66,7 @@ public class Demo01 {
     那么byte类型的-1就变成int类型的255了这样可以保证整个数据读完,而结束标记的-1就是int类型
     */
     private static void FileInputFun() throws IOException {
-        File file1 = new File("D:\\Java\\workplace\\JavaLearning\\src\\Java15_io\\a.txt");
+        File file1 = new File("D:\\Java\\workplace\\JavaLearning\\src\\Java15_io_ByteStream\\a.txt");
         FileInputStream fileInputStream1 = new FileInputStream(file1);
 
         int b = 0;

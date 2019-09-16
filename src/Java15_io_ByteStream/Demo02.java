@@ -1,7 +1,6 @@
-package Java15_io;
+package Java15_io_ByteStream;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
@@ -28,8 +27,8 @@ public class Demo02 {
         定义一个缓冲区，先将文件读入到缓冲区，再将缓冲区中数据写入到文件
      */
     private static void fun3() throws IOException {
-        FileInputStream fileInputStream = new FileInputStream(".\\src\\Java15_io\\picture.jpg");
-        FileOutputStream fileOutputStream = new FileOutputStream(".\\src\\Java15_io\\picture1.jpg");
+        FileInputStream fileInputStream = new FileInputStream(".\\src\\Java15_io_ByteStream\\picture.jpg");
+        FileOutputStream fileOutputStream = new FileOutputStream(".\\src\\Java15_io_ByteStream\\picture1.jpg");
 
         //设置缓冲区大小
         byte[] bytes = new byte[1024 * 8];
@@ -55,8 +54,8 @@ public class Demo02 {
     不建议用于大文件的拷贝
     */
     private static void fun2() throws IOException {
-        FileInputStream fileInputStream = new FileInputStream(".\\src\\Java15_io\\picture.jpg");
-        FileOutputStream fileOutputStream = new FileOutputStream(".\\src\\Java15_io\\picture1.jpg");
+        FileInputStream fileInputStream = new FileInputStream(".\\src\\Java15_io_ByteStream\\picture.jpg");
+        FileOutputStream fileOutputStream = new FileOutputStream(".\\src\\Java15_io_ByteStream\\picture1.jpg");
 
         int size = fileInputStream.available();
         System.out.println("文件大小：" + size);
@@ -73,8 +72,8 @@ public class Demo02 {
         每次读取一字节，效率低下
      */
     private static void fun1() throws IOException {
-        FileOutputStream fileOutputStream = new FileOutputStream(".\\src\\Java15_io\\picture1.jpg");
-        FileInputStream fileInputStream = new FileInputStream(".\\src\\Java15_io\\picture.jpg");
+        FileOutputStream fileOutputStream = new FileOutputStream(".\\src\\Java15_io_ByteStream\\picture1.jpg");
+        FileInputStream fileInputStream = new FileInputStream(".\\src\\Java15_io_ByteStream\\picture.jpg");
 
         int b = 0;
         while ((b = fileInputStream.read()) != -1) {
