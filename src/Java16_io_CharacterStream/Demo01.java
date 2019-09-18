@@ -13,8 +13,12 @@ import java.io.IOException;
  */
 
 /*
-    FileReader类的read方法返回的值是int类型，是将对应的字符转换成int值
+    字节流、字符流使用场景：字符读文件，字节写文件！！！
+    如果是读取文本文件，使用FileReader比较好,不考虑乱码问题
+    如果是写入文本文件，不建议使用FileWriter,直接使用FileOutputStream好一点
+    因为是字节直接写入文件，不需要过多数据类型转换
  */
+
 public class Demo01 {
     public static void main(String[] args) throws IOException {
         FileReader fileReader = new FileReader(".\\src\\Java16_io_CharacterStream\\a.txt");
