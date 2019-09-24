@@ -24,7 +24,7 @@ public class Demo05 {
 
 //写法一
 class Singleton1{
-    private static Singleton1 instance =  new 1();
+    private static Singleton1 instance =  new Singleton1();
 
     private Singleton1(){}
 
