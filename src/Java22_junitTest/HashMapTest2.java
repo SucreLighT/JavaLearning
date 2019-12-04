@@ -21,7 +21,7 @@ public class HashMapTest2 {
 
     @After
     public void tearDown() throws Exception {
-        hashMapDemo.initialize();
+        hashMapDemo.clear();
     }
 
     @Test
